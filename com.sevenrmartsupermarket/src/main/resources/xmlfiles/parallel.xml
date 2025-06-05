@@ -1,0 +1,24 @@
+<suite name="Scenario1" thread-count="5" parallel="tests">
+	<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"></listener>
+	</listeners>
+	<test name="ValidLogin">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest"></class>
+			<class name="com.sevenrmartsupermarket.tests.LoginTests"></class>
+		</classes>
+	</test>
+	<test name="AccessDashboard">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest"></class>
+			<class name="com.sevenrmartsupermarket.tests.LoginTests"></class>
+		</classes>
+	</test>
+	<test name="AccessManageContact">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest"></class>
+			<class name="com.sevenrmartsupermarket.tests.LoginTests"></class>
+		</classes>
+	</test>
+</suite>

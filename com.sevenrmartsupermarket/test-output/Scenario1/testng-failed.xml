@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Scenario1]">
+  <listeners>
+    <listener class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="AccessManageContact(failed)">
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.LoginTests">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+          <include name="verifyLoginWithValidData"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.LoginTests -->
+    </classes>
+  </test> <!-- AccessManageContact(failed) -->
+  <test thread-count="5" parallel="tests" name="AccessDashboard(failed)">
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.LoginTests">
+        <methods>
+          <include name="terminateBrowser"/>
+          <include name="launchBrowser"/>
+          <include name="verifyLoginWithValidData"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.LoginTests -->
+    </classes>
+  </test> <!-- AccessDashboard(failed) -->
+  <test thread-count="5" parallel="tests" name="ValidLogin(failed)">
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.LoginTests">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+          <include name="verifyLoginWithValidData"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.LoginTests -->
+    </classes>
+  </test> <!-- ValidLogin(failed) -->
+</suite> <!-- Failed suite [Scenario1] -->

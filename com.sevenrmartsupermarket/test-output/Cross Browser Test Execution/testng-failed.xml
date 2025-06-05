@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Cross Browser Test Execution]">
+  <listeners>
+    <listener class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"/>
+  </listeners>
+  <test thread-count="5" name="test in group(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.LoginTests">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+          <include name="verifyLoginWithValidData"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.LoginTests -->
+    </classes>
+  </test> <!-- test in group(failed) -->
+</suite> <!-- Failed suite [Cross Browser Test Execution] -->
