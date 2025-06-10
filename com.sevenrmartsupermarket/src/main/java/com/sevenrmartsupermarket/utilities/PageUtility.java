@@ -50,6 +50,13 @@ public class PageUtility {
 		actions.doubleClick(element).build().perform();
 	}
 	
+	public void alerts(WebElement element)
+	{
+		element.click();
+		driver.switchTo().alert().accept();
+		
+	}
+	
 	
 
 }
