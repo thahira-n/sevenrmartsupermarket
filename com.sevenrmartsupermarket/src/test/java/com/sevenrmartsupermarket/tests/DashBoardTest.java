@@ -22,7 +22,7 @@ public class DashBoardTest extends Base {
 		adminuserspage=new AdminUsersPage(driver);
 		loginpage.login("admin", "admin");
 		boolean actualresult=dashboardpage.clickOnAdminMoreInfo();
-		//boolean expectedresult=true;
+		
 		Assert.assertTrue(actualresult);
 	}
 }

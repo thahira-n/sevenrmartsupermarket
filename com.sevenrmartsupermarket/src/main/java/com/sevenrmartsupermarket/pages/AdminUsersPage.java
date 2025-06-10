@@ -34,6 +34,24 @@ public class AdminUsersPage {
 	private WebElement searchUserType;
 	@FindBy(xpath="//button[@name='Search']")
 	private WebElement searchUserSearch;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td[1]")
+	private WebElement searchedUserNameDisplayField;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td[5]//i[@class='fas fa-edit']")
+	private WebElement updateUserButton;
+	@FindBy(xpath="//input[@id='username']")
+	private WebElement updateUserNameField; 
+	@FindBy(xpath="//input[@type='password']")
+	private WebElement updatePassWordField;
+	@FindBy(xpath="//select[@id='user_type']")
+	private WebElement updateUserTypeField;
+	@FindBy(xpath="//button[@name='Update']")
+	private WebElement updateSubmitButton;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	private WebElement updateAlertBox;
+	@FindBy(xpath="//table[contains(@class, 'table')]//tr[td[1][text()='Declan']]//a[contains(@class, 'btn-danger')]")
+	private WebElement deletebButtonOfDeclan;
+	
+	
 	public AdminUsersPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -58,14 +76,39 @@ public class AdminUsersPage {
 	
 	}
 	
-	public void search_User(String userName,String type) {
+	public String search_User(String userName,String type) {
 		PageUtility pageutility=new PageUtility(driver);
 		Select select=new Select(searchUserType);
 		searchButton.click();
 		searchUsername.sendKeys(userName);
 		pageutility.selectByVisibleText(searchUserType,type);
 		searchUserSearch.click();
+		return searchedUserNameDisplayField.getText();
 		
 	}
+	
+	public String update_User(String updatedUserName,String updatedPassWord,String updatedType) {
+		PageUtility pageutility=new PageUtility(driver);
+		Select select=new Select(updateUserTypeField);
+		updateUserButton.click();
+		updateUserNameField.clear();
+		updateUserNameField.sendKeys(updatedUserName);
+		updatePassWordField.clear();
+		updatePassWordField.sendKeys(updatedPassWord);
+		pageutility.selectByVisibleText(updateUserTypeField,updatedType );
+		updateSubmitButton.click();
+		return updateAlertBox.getText();
+	}
+	
+	public void delete_User() {
+		deletebButtonOfDeclan.click();
+	}
+		
+		
+		
+		
+		
+		
+	
 
 }

@@ -15,7 +15,7 @@ public class DataProviders {
 	@DataProvider(name = "projectsiteloginwithfakedata")
 	public Object[][] getUserData() {
 		Faker faker = new Faker();
-		Object[][] data = new Object[3][2]; // 3 sets of data, each with 2 values
+		Object[][] data = new Object[3][2]; 
 
 		for (int i = 0; i < 3; i++) {
 			String name = faker.name().fullName();

@@ -17,11 +17,11 @@ import com.relevantcodes.extentreports.LogStatus;
 import com.sevenrmartsupermarket.constants.Constants;
 import com.sevenrmartsupermarket.utilities.GeneralUtility;
 
-public class ExtentReporter implements IReporter{//generate reports
+public class ExtentReporter implements IReporter{
 	 private ExtentReports extent;
 
-	 public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {//output directory-where saves
-		 extent = new ExtentReports(Constants.EXTENT_REPORTPATH + File.separator + "Extent_"+GeneralUtility.get_TimeStamp()+".html", true);//filename-exctent.html
+	 public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+		 extent = new ExtentReports(Constants.EXTENT_REPORTPATH + File.separator + "Extent_"+GeneralUtility.get_TimeStamp()+".html", true);
 
 	 for (ISuite suite : suites) {
 	 Map<String, ISuiteResult> result = suite.getResults();

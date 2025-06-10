@@ -18,8 +18,8 @@ public class LoginTests extends Base {
 	@Test(groups = { "smoke", "regression" })
 	public void verifyLoginWithValidData() {
 		loginpage = new LoginPage(driver);
-		dashboardpage = new DashBoardPage(driver);
-		loginpage.login("admin", "admin");
+		
+		dashboardpage=loginpage.login("admin", "admin");
 		String actualProfileName = dashboardpage.getProfileName();
 		String expectedProfileName = "Admin";
 		Assert.assertEquals(actualProfileName, expectedProfileName);

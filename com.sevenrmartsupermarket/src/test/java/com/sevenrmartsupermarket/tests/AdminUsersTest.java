@@ -15,11 +15,11 @@ public class AdminUsersTest extends Base {
 	@Test(groups={"smoke","regression"})
 	public void verifyNewUserCreation()
 	{
-		adminuserspage=new AdminUsersPage(driver);
-		dashboardpage=new DashBoardPage(driver);
+		
+		
 		loginpage=new LoginPage(driver);
-		loginpage.login("admin", "admin");
-		dashboardpage.clickOnAdminMoreInfo1();
+		dashboardpage=loginpage.login("admin", "admin");
+		adminuserspage=dashboardpage.clickOnAdminMoreInfo1();
 		String actualResult=adminuserspage.create_NewUser("ThahiraNasar","asdfg","Admin");
 		
 		String expectedResult="×\n"+"Alert!\n"+"User Created Successfully";
@@ -33,8 +33,35 @@ public class AdminUsersTest extends Base {
 		loginpage=new LoginPage(driver);
 		loginpage.login("admin", "admin");
 		dashboardpage.clickOnAdminMoreInfo1();
-		adminuserspage.search_User("Nihar","Admin");
+		String actualResult=adminuserspage.search_User("Nihar","Admin");
+		String expectedResult="Nihar";
+		Assert.assertEquals(actualResult, expectedResult);
+	
 	}
 	
+	@Test
+	public void verifyUpadateUser()
+	{
+		adminuserspage=new AdminUsersPage(driver);
+	dashboardpage=new DashBoardPage(driver);
+	loginpage=new LoginPage(driver);
+	loginpage.login("admin", "admin");
+	dashboardpage.clickOnAdminMoreInfo1();
+	
+	String actualResult=adminuserspage.update_User("Zehra","admin" ,"Admin");
+	String expectedResult="×\n"+"Alert!\n"+"User Updated Successfully";
+	Assert.assertEquals(actualResult, expectedResult);
+	}
+	
+	@ Test
+	public void verifyDeleteUser() {
+		adminuserspage=new AdminUsersPage(driver);
+		dashboardpage=new DashBoardPage(driver);
+		loginpage=new LoginPage(driver);
+		loginpage.login("admin", "admin");
+		dashboardpage.clickOnAdminMoreInfo1();
+		adminuserspage.delete_User();
+		
+	}
 
 }
