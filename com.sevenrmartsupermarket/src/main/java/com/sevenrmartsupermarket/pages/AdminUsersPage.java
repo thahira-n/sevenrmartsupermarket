@@ -102,7 +102,6 @@ public class AdminUsersPage {
 	
 	public void delete_User() {
 		PageUtility pageutility=new PageUtility(driver);
-		
 		pageutility.alerts(deletebButtonOfDeclan);
 		
 	}
