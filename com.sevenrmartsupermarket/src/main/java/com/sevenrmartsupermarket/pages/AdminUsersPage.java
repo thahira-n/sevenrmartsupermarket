@@ -48,7 +48,7 @@ public class AdminUsersPage {
 	private WebElement updateSubmitButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	private WebElement updateAlertBox;
-	@FindBy(xpath="//table[contains(@class, 'table')]//tr[td[1][text()='Declan']]//a[contains(@class, 'btn-danger')]")
+	@FindBy(xpath="//table[contains(@class, 'table')]//tr[td[1]]//a[contains(@class, 'btn-danger')]")
 	private WebElement deletebButtonOfDeclan;
 	
 	
@@ -101,7 +101,10 @@ public class AdminUsersPage {
 	}
 	
 	public void delete_User() {
-		deletebButtonOfDeclan.click();
+		PageUtility pageutility=new PageUtility(driver);
+		
+		pageutility.alerts(deletebButtonOfDeclan);
+		
 	}
 		
 		
