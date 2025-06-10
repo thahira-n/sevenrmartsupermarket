@@ -57,7 +57,7 @@ public class LoginPage {
 		return new DashBoardPage(driver);
 	}
 
-	public DashBoardPage login() {// reads from config
+	public DashBoardPage login() {
 		String userName = properties.getProperty("username");
 		String passWord = properties.getProperty("password");
 		enterUserName(userName);
