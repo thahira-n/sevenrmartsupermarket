@@ -16,13 +16,11 @@ public class DashBoardTest extends Base {
 	Properties properties = new Properties();
 	
 	@Test(groups="smoke")
-	public void verifyClickonAdminMoreInfo() {
+	public void verifyWhetherAdminUsersPageDisplayed() {
 		dashboardpage=new DashBoardPage(driver);
 		loginpage=new LoginPage(driver);
-		adminuserspage=new AdminUsersPage(driver);
 		loginpage.login("admin", "admin");
-		boolean actualresult=dashboardpage.clickOnAdminMoreInfo();
-		
-		Assert.assertTrue(actualresult);
+		boolean actualResult=dashboardpage.adminUsersTableDisplayed();
+		Assert.assertTrue(actualResult);
 	}
 }
