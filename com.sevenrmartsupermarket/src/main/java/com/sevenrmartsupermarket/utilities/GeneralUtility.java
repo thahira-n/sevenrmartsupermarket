@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import com.github.javafaker.Faker;
 
-public class GeneralUtility {// no constructor
+public class GeneralUtility {
 	public String get_Attribute(WebElement element, String attribute) {
 		return element.getDomAttribute(attribute);
 	}
@@ -27,7 +27,7 @@ public class GeneralUtility {// no constructor
 		return data;
 	}
 
-	public static String get_RandomName() {// generate random name
+	public static String get_RandomName() {
 		Faker faker = new Faker();
 		return faker.name().firstName();
 	}

@@ -28,14 +28,11 @@ public class LoginTests extends Base {
 
 	@Test(dataProvider = "projectsitelogin", dataProviderClass = DataProviders.class,groups="smoke")
 	public void verifyTextOfLoginFailAlertWithInvalidDataFromExcelUsingDataProvider(String userName, String passWord) {
-		//excelreader.setExcelFile("Sheet2");
-		//excelreader.getCellData(0, 0);
 		loginpage = new LoginPage(driver);
 		dashboardpage = new DashBoardPage(driver);
 		loginpage.login(userName, passWord);
 		String actualTextOfAlert = loginpage.get_TextOfAlertOfInvalidUserNameOrPassword();
 		String expectedTextOfAlert = "×\n" + "Alert!\n" + "Invalid Username/Password";
-		System.out.println(actualTextOfAlert);
 		Assert.assertEquals(actualTextOfAlert, expectedTextOfAlert);
 
 
